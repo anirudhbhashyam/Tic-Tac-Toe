@@ -47,6 +47,20 @@ bool Game::check_win()
         if (count == n - 1) return true;
     }
 
+    // Check the columns.
+    for (auto i{ 0 }; i < n; i += n)
+    {
+        int8_t temp_state = cells[0].get_shape();
+        if (temp_state == -1) continue;
+        int32_t count{ 0 };
+        for (auto j{ 1 }; j < m; j++)
+        {
+            if (cells[i + j * n].get_shape() != temp_state) break;
+            count += 1;
+        }
+        if (count == m - 1) return true;
+    }
+
     return false;
 }
 
