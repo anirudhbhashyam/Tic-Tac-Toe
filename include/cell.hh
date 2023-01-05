@@ -1,16 +1,17 @@
 #pragma once
 
+#include <cmath>
 #include <iostream>
 #include <stdint.h>
-#include <cmath>
 
 #include <SDL2/SDL.h>
 
-typedef struct 
+class CellState 
 {
-    bool filled;
-    int8_t shape;
-} CellState;
+    public:
+        bool filled;
+        int8_t shape;
+};
 
 
 class Cell
@@ -31,7 +32,7 @@ class Cell
         void set_shape(int8_t = -1);
         int8_t get_shape() const { return state.shape; };
 
-        void fill(SDL_Renderer*, const int8_t) const;
+        void fill(SDL_Renderer* renderer) const;
 
     public:
         int32_t x;

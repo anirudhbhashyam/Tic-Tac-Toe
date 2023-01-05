@@ -97,8 +97,9 @@ void Cell::set_shape(int8_t shape)
     state.shape = shape;
 }
 
-void Cell::fill(SDL_Renderer* renderer, const int8_t turn) const
+void Cell::fill(SDL_Renderer* renderer) const
 {
+    int8_t turn = this->get_shape();
     if (turn == -1) return;
 
     if (turn == 1)
