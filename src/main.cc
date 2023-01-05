@@ -6,7 +6,7 @@
 
 #define WIDTH 800
 #define HEIGHT 800
-#define TITLE "Test"
+#define TITLE "Tic Tac Toe"
 #define M 3
 #define N 3
 
