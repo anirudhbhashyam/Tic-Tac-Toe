@@ -1,11 +1,11 @@
 #include "window.hh"
 
 
-Window::Window(uint32_t width_, uint32_t height_, const std::string& title_)
+Window::Window(uint32_t width_, uint32_t height_, const char* title_)
     : title(title_)
 {
     screen = sdl_error_ptr(
-        SDL_CreateWindow(title.c_str(), 0, 0, width_, height_, SDL_WINDOW_RESIZABLE)
+        SDL_CreateWindow(title, 0, 0, width_, height_, SDL_WINDOW_RESIZABLE)
     );
 }
 
