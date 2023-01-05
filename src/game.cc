@@ -105,7 +105,7 @@ void Game::run()
         {   
             if (!cell.is_filled()) continue;
             renderer.set_color(255, 0, 0, 255);
-            cell.fill(renderer.get_renderer_ref(), cell.get_shape());
+            cell.fill(renderer.get_renderer_ref());
         }
         renderer.update();
     }
