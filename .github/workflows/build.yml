@@ -27,7 +27,6 @@ jobs:
         run: |
           ./pack.sh build
 
-jobs:
   check-build-macos:
     runs-on: ubuntu-latest
     steps:
