@@ -32,10 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # - name: Setup clang
-      #   run: |
-      #     brew install llvm --with-clang
-
       - name: Setup dependencies
         run: |
           brew update
