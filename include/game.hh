@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdint.h>
+#include <ranges>
 
 #include <SDL2/SDL.h>
 
