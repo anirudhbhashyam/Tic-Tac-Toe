@@ -11,7 +11,7 @@
 #define N 3
 
 
-int main() 
+int main()
 {
     Window win(WIDTH, HEIGHT, TITLE);
     Renderer r(win);
