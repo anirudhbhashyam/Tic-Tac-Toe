@@ -2,7 +2,7 @@
 
 
 Game::Game(const Renderer& renderer_, uint32_t fps_, int32_t m_, int32_t n_)
-    : fps(fps_), renderer(renderer_), m(m_), n(n_)
+    : m(m_), n(n_), fps(fps_), renderer(renderer_)
 {
     sdl_error(SDL_Init(SDL_INIT_VIDEO));
 
@@ -113,14 +113,21 @@ void Game::run()
         }
 
         if (!running) break;
-
         renderer.draw_grid(cells);
+        #if 0
+        for (const auto& cell: cells | std::views::filter([](const auto& cell) { return cell.is_filled(); }))
+        {   
+            renderer.set_color(255, 0, 0, 255);
+            cell.fill(renderer.get_renderer_ref());
+        }
+        #endif
         for (const auto& cell: cells)
         {   
             if (!cell.is_filled()) continue;
             renderer.set_color(255, 0, 0, 255);
             cell.fill(renderer.get_renderer_ref());
         }
+
         renderer.update();
     }
 }
