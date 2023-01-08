@@ -6,7 +6,7 @@ Renderer::Renderer(const Window& window_)
     : window(window_)
 {
     renderer = sdl_error_ptr(
-        SDL_CreateRenderer(window.get_screen_ref(), -1, SDL_RENDERER_ACCELERATED)
+        SDL_CreateRenderer(window.get_screen_ref(), 1, SDL_RENDERER_ACCELERATED)
     );
 }
 
